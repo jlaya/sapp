@@ -1,0 +1,60 @@
+
+.info-email{
+    padding: 1px;
+    vertical-align: bottom;
+    background-color: #F6C28E;
+}
+
+.bold{
+    font-weight:bold;
+}
+span{
+    color: #FFFFFF !important;
+    font-weight: bold;
+}
+
+.bold-span{
+    color: #000000;
+    font-weight: bold;
+}
+
+.span-red{
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.border-none{
+    border: none;
+}
+
+.align-center{
+    text-align: center !important;
+}
+.align-right{
+    text-align: right !important;
+}
+
+.space{
+    width:8%;
+}
+
+table {
+    border-spacing: 0px 0px;
+}
+
+td{
+    padding: 8px;
+}
+
+.th {
+    height: 50px;
+    padding: 17px;
+    vertical-align: bottom;
+}
+
+
+
+
+
+
+

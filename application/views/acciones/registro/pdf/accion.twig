@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{ link_tag('assets/css/bootstrap.min.css') }}	
+	{{ link_tag('assets/css/general.css') }}
+</head>
+<body>
+	<div id="ejecucion-financiera">
+		<div class="alert align-center"  style="background-color:#A7231C; color:#FFFFFF;">EJECUCIÓN FINANCIERA</div>
+		
+		<table class="table striped separator" border="1">
+			<thead>
+				<tr class="align-center">
+					<th class="align-center">#</th>
+					<th class="align-center">Cod</th>
+					<th class="align-center">Partida Presupuestaria</th>
+					<th class="th">Monto</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% set sum_total = 0 %}
+				{% for row in accion %}	
+					<tr>
+						<td style="background-color: #7F7F7F; color: #FFFFFF;">{{ loop.index }}</td>
+						<td>{{ row.estructura }}</td>
+						<td>{{ row.partida }}</td>
+						<td class="align-right">{{ row.compromiso|number_format(2, '.', ',') }}</td>
+					</tr>
+					{% set sum_total = sum_total + row.compromiso%}
+				{% endfor %}
+				<tr>
+					<td style="background-color: #7F7F7F; color: #FFFFFF;"></td>
+					<td></td>
+					<td></td>
+					<td class='align-center' style='font-weight: bold;'>{{ sum_total|number_format(2, '.', ',') }}</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+			</body>
+			</html>

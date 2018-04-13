@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{ link_tag('assets/css/bootstrap.min.css') }}	
+	{{ link_tag('assets/css/general.css') }}
+</head>
+<body>
+	<div class="alert alert-info align-center" style="color:000000;">EJECUCIÓN FISICA</div>
+	
+	<table class="table striped separator" border="1" style="width:25%; float:left;">
+		<thead>
+			<tr>
+				<th class="align-center">Cumplido</th>
+				<th class="align-center">No Cumplido</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="align-right span-red">({{ count_cumplido_acc.cumplido }})</td>
+				<td class="align-right span-red">({{ count_no_cumplido_acc.no_cumplido }})</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table class="table striped separator" border="1">
+		<thead>
+			<tr class="align-center">
+				<th class="align-center">#</th>
+				<th class="align-center">Actividad</th>
+				<th class="th">Programado</th>
+				<th class="th">Cumplido</th>
+				<th class="align-center space">%</th>
+				<th class="th">Programada</th>
+				<th class="th">Ejecutada</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in accion %}
+				<tr>
+					<td style="background-color: #7F7F7F; color: #FFFFFF;">{{ loop.index }}</td>
+					<td>{{ row.actividad }}</td>
+					<td class="align-right">{{ row.prog_trimestral }}</td>
+					<td class="align-right">{{ row.cump_trimestral }}</td>
+					<td class='align-center'>
+						{% if row.cump_trimestral != 0 or row.prog_trimestral != 0 %}
+							{{ (row.cump_trimestral / row.prog_trimestral) * 100 }}%
+						{% else %}
+							0.00%
+						{% endif %}
+					</td>
+					<td class="align-right">{{ row.meta_programado|number_format(2, '.', ',') }}</td>
+					<td class="align-right">{{ row.meta_ejecutado|number_format(2, '.', ',') }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{# <div id="container-demo" style="height: 900px"></div> #}
+	<div id="grafica">
+		<img src="{{ base_url() ~ 'assets/image/accion_' }}{{ id }}.jpg" alt="" width="1024px" height="150px">
+	</div>
+	<div id="ejecucion-financiera">
+		<div class="alert alert-info align-center"  style="color:000000;">EJECUCIÓN FINANCIERA</div>
+		
+		<table class="table striped separator" border="1">
+			<thead>
+				<tr class="align-center">
+					<th class="align-center">#</th>
+					<th class="align-center">Partida Presupuestaria</th>
+					<th class="th">Compromiso</th>
+					<th class="th">Causado</th>
+					<th class="th">Pagado</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% set sum_compromiso = 0 %}
+					{% set sum_causado = 0 %}
+						{% set sum_pagado = 0 %}
+							{% for row in financiero %}	
+								<tr>
+									<td style="background-color: #7F7F7F; color: #FFFFFF;">{{ loop.index }}</td>
+									<td>{{ row.partida }}</td>
+									<td class="align-right">{{ row.compromiso|number_format(2, '.', ',') }}</td>
+									<td class="align-right">{{ row.causado|number_format(2, '.', ',') }}</td>
+									<td class='align-center'>{{ row.pagado|number_format(2, '.', ',') }}</td>
+								</tr>
+								{% set sum_compromiso = sum_compromiso + row.compromiso%}
+								{% set sum_causado = sum_causado + row.causado%}
+								{% set sum_pagado = sum_pagado + row.pagado%}
+							{% endfor %}
+							<tr>
+								<td style="background-color: #7F7F7F; color: #FFFFFF;"></td>
+								<td></td>
+								<td class="align-right" style='font-weight: bold;'>{{ sum_compromiso|number_format(2, '.', ',') }}</td>
+								<td class="align-right" style='font-weight: bold;'>{{ sum_causado|number_format(2, '.', ',') }}</td>
+								<td class='align-center' style='font-weight: bold;'>{{ sum_pagado|number_format(2, '.', ',') }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</body>
+			</html>

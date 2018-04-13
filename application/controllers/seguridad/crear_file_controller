@@ -1,0 +1,49 @@
+ $controllers = APPPATH.'controllers/';
+
+        $folder    = 'seguridad/';
+        $path      = $controllers.$folder;
+        $nom_class = 'Perfil';
+        $file      = $nom_class.'.php';
+        $path_file = $path.'C'.$file;
+        $new       =strtolower($nom_class);
+        $text = <<<HTML
+<?php
+class C$nom_class extends CI_Controller
+{
+    private \$dir   = '$folder';
+    private \$files = array('new'=>'$new');
+    private \$vista = '';
+    function __construct()
+    {
+        parent::__construct();
+        \$this->files = (object)\$this->files;
+    }
+    public function index()
+    {
+        \$this->vista    = \$this->dir.\$this->files->new;
+        \$this->template->set('title', 'Perfil');
+        \$this->template->load('template', \$this->vista);
+    }
+}
+?>
+HTML;
+        if(!is_dir($path)){
+            mkdir($path,0777,TRUE);
+            chmod($path, 0777);  // octal; valor de modo correcto
+            $fp = fopen($path_file, 'w');
+            fwrite($fp, "");
+            fwrite($fp, "class CModulo extends CI_Controller{");
+            fwrite($fp, "class CModulo extends CI_Controller{");
+            fclose($fp);
+            chmod($path_file, 0777);
+        }else{
+            if (file_exists($path_file)) {
+             echo "El fichero $path_file existe";
+            } else {
+                $fp = fopen($path_file, 'w');
+                fwrite($fp, $text);
+                fclose($fp);
+                chmod($path_file, 0777);
+                echo "El fichero $path_file fue creado";
+            }
+        }
