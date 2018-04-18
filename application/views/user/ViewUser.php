@@ -41,7 +41,7 @@ if (isset($_REQUEST['error']) == "1") {
                   $.post('<?php echo base_url(); ?>ControllersUser/iniciar', $('#form_login').serialize(), function (response) {
 
                     if (response == 1) {
-                      url = "<?php echo base_url('dashboard'); ?>"
+                      url = "<?php echo base_url('/ControllersUser/home'); ?>"
                       window.location = url;
 
                     } else if (response == 2) {
@@ -497,17 +497,10 @@ input[type=checkbox] {
 		  <div class="inset">
         <p>
        <label for="username">Manual de referencia</label>
-       <div style="float: left;">
-         <select class="form-control" id="manual" style="width: 150%;">
-           <option value="<?php echo base_url('/assets/manual/GESTION.pdf')?>">Manual de Gestión</option>
-         </select>
-       </div>
-       <div style="float: left;">
-        <input style="width: 100%;margin-left: 157%;" type="button" class="btn btn-success" id="show-manual" value="PDF">
-       </div>
+       <select class="form-control" id="manual">
+         <option value="<?php echo base_url('/assets/manual/GESTION.pdf')?>">Manual de Gestión</option>
+       </select>
        </p>
-       <br>
-       <br>
        <br>
 			<p>
 			 <label for="username">Usuario</label>
@@ -521,10 +514,14 @@ input[type=checkbox] {
 			<input type="checkbox" id="remember" disabled>
 			<label for="remember">¿Olvido su contraseña?</label>
 		  </p>-->
-		  <div class="col-xs-12">
-			<input style="width: 100%;" type="button" class="btn btn-info" id="iniciar" value="Ingresar al sistema">
+		  <div class="col-xs-6">
+			<input title="Ingresar al sistema SAPP" style="width: 100%;" type="button" class="btn btn-info" id="iniciar" value="Ingresar">
 			<br/><br/>
 		  </div>
+      <div class="col-xs-6">
+      <input title="Clic para abrir el manual..." style="width: 100%;" type="button" class="btn btn-success" id="show-manual" value="Manual">
+      <br/><br/>
+      </div>
 		</div>
 	  </form>
 	</div> 

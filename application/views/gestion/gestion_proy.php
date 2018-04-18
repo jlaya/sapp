@@ -110,7 +110,7 @@
                               <div class="tab-pane active" id="content-proy">
                                   <div class="form-inline">
                                     <div class="form-group col-xs-12 jumbotron">
-										<div class='alert alert-info' style='color: #000000;'>Clic en la celda para abrir el formulario e ingresar los datos para la Ejecución Física.</div>
+										<div class='alert alert-danger' style='color: #000000;'>Clic en la celda para abrir el formulario e ingresar los datos para la Ejecución Física.</div>
                                     <fieldset>
                                         <legend>EJECUCIÓN FISICA</legend>
                                         <table id="table-gestion-proy" class="table-gestion-proy table-bordered table-striped table-hover table-condensed dt-responsive table-responsive" style="width: 100%;">
@@ -156,32 +156,38 @@
                                     </div>
                               </div>
                               <div class="tab-pane" id="content-pre">
+                                <div class="col-xs-6 col-md-6">
+                                  <div class='alert alert-danger' style='color: #000000;'><b>Nota: </b>Antes de adjuntar los <b>cuadros gráficos</b>, segurece que los mismos sean el formato <b>PDF</b> adecuado</div>
+                                </div>
+                                <div class="col-xs-6 col-md-6">
+                                  <div class='alert alert-danger' style='color: #000000;'><b>Nota: </b>Antes de adjuntar las <b>imágenes</b>, asegure de cambiar el nombre de la imagen para que el sistema lo tome correctamente. </div>
+                                </div>
                                 <div class="col-xs-6 col-md-12">
                                   <div class="col-xs-3 col-md-3">
-                                    <input type="file" name="avatar_grafico_1" id='avatar_grafico_1'>
+                                    <input type="file" name="avatar_grafico_1" id='avatar_grafico_1' title="Antes de adjuntar los cuadros gráficos, segurece que los mismos sean el formato PDF adecuado.">
                                   </div>
                                   <div class="col-xs-3 col-md-3">
-                                    <input type="file" name="avatar_grafico_2" id='avatar_grafico_2'>
+                                    <input type="file" name="avatar_grafico_2" id='avatar_grafico_2' title="Antes de adjuntar los cuadros gráficos, segurece que los mismos sean el formato PDF adecuado.">
                                   </div>
                                   <div class="col-xs-3 col-md-3">
-                                    <input type="file" name="avatar_grafico_3" id='avatar_grafico_3'>
+                                    <input type="file" name="avatar_grafico_3" id='avatar_grafico_3' title="Antes de adjuntar los cuadros gráficos, segurece que los mismos sean el formato PDF adecuado.">
                                   </div>
                                   <div class="col-xs-3 col-md-3">
-                                    <input type="file" name="avatar_grafico_4" id='avatar_grafico_4'>
+                                    <input type="file" name="avatar_grafico_4" id='avatar_grafico_4' title="Antes de adjuntar los cuadros gráficos, segurece que los mismos sean el formato PDF adecuado.">
                                   </div>
                                 </div>
                                 <div class="col-xs-6 col-md-12">
                                   <div class="col-xs-3 col-md-3">
-                                    <input type="file" name="avatar_foto_1" id='avatar_foto_1'>
+                                    <input type="file" name="avatar_foto_1" id='avatar_foto_1' title="Antes de adjuntar las imágenes, asegure de cambiar el nombre de la imagen para que el sistema lo tome correctamente.">
                                   </div>
                                   <div class="col-xs-3 col-md-3">
-                                    <input type="file" name="avatar_foto_2" id='avatar_foto_2'>
+                                    <input type="file" name="avatar_foto_2" id='avatar_foto_2' title="Antes de adjuntar las imágenes, asegure de cambiar el nombre de la imagen para que el sistema lo tome correctamente.">
                                   </div>
                                   <div class="col-xs-3 col-md-3">
-                                    <input type="file" name="avatar_foto_3" id='avatar_foto_3'>
+                                    <input type="file" name="avatar_foto_3" id='avatar_foto_3' title="Antes de adjuntar las imágenes, asegure de cambiar el nombre de la imagen para que el sistema lo tome correctamente.">
                                   </div>
                                   <div class="col-xs-3 col-md-3">
-                                    <input type="file" name="avatar_foto_4" id='avatar_foto_4'>
+                                    <input type="file" name="avatar_foto_4" id='avatar_foto_4' title="Antes de adjuntar las imágenes, asegure de cambiar el nombre de la imagen para que el sistema lo tome correctamente.">
                                   </div>
                                 </div>
                                 <div class="col-xs-6 col-md-4" style='margin-top: 2%;'>Resumen:</div>

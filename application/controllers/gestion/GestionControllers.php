@@ -287,7 +287,7 @@ class GestionControllers extends CI_Controller
         $ruta = getcwd();  // Obtiene el directorio actual en donde se esta trabajando
         
         // Archivo Foto
-        if ($_FILES['avatar_foto_1']['name'] !=""){
+        if (isset($_FILES['avatar_foto_1']['name']) !=""){
             $archivo = $_FILES['avatar_foto_1']['name'];
             
             $ruta    = getcwd();  // Obtiene el directorio actual en donde se esta trabajando
@@ -297,7 +297,7 @@ class GestionControllers extends CI_Controller
             }
         }
 
-        if ($_FILES['avatar_foto_2']['name'] !=""){
+        if (isset($_FILES['avatar_foto_2']['name']) !=""){
             $archivo = $_FILES['avatar_foto_2']['name'];
             $ruta    = getcwd();  // Obtiene el directorio actual en donde se esta trabajando
             if($archivo){
@@ -306,7 +306,7 @@ class GestionControllers extends CI_Controller
             }
         }
 
-        if ($_FILES['avatar_foto_3']['name'] !=""){
+        if (isset($_FILES['avatar_foto_3']['name']) !=""){
             $archivo = $_FILES['avatar_foto_3']['name'];
             $ruta    = getcwd();  // Obtiene el directorio actual en donde se esta trabajando
             if($archivo){
@@ -315,7 +315,7 @@ class GestionControllers extends CI_Controller
             }
         }
 
-        if ($_FILES['avatar_foto_4']['name'] !=""){
+        if (isset($_FILES['avatar_foto_4']['name']) !=""){
             $archivo = $_FILES['avatar_foto_4']['name'];
             $ruta    = getcwd();  // Obtiene el directorio actual en donde se esta trabajando
             if($archivo){
@@ -325,7 +325,7 @@ class GestionControllers extends CI_Controller
         }
 
         // Archivo pdf
-        if ($_FILES['avatar_grafico_1']['name'] !=""){
+        if (isset($_FILES['avatar_grafico_1']['name']) !=""){
             $archivo = $_FILES['avatar_grafico_1']['name'];
             $ruta    = getcwd();  // Obtiene el directorio actual en donde se esta trabajando
             if($archivo){
@@ -334,7 +334,7 @@ class GestionControllers extends CI_Controller
             }
         }
 
-        if ($_FILES['avatar_grafico_2']['name'] !=""){
+        if (isset($_FILES['avatar_grafico_2']['name']) !=""){
             $archivo = $_FILES['avatar_grafico_2']['name'];
             $ruta    = getcwd();  // Obtiene el directorio actual en donde se esta trabajando
             if($archivo){
@@ -343,7 +343,7 @@ class GestionControllers extends CI_Controller
             }
         }
 
-        if ($_FILES['avatar_grafico_3']['name'] !=""){
+        if (isset($_FILES['avatar_grafico_3']['name']) !=""){
             $archivo = $_FILES['avatar_grafico_3']['name'];
             $ruta    = getcwd();  // Obtiene el directorio actual en donde se esta trabajando
             if($archivo){
@@ -352,7 +352,7 @@ class GestionControllers extends CI_Controller
             }
         }
 
-        if ($_FILES['avatar_grafico_4']['name'] !=""){
+        if (isset($_FILES['avatar_grafico_4']['name']) !=""){
             $archivo = $_FILES['avatar_grafico_4']['name'];
             $ruta    = getcwd();  // Obtiene el directorio actual en donde se esta trabajando
             if($archivo){
